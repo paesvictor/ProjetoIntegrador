@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-image: url(../images/telafundomedico.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed
+}
+
+nav.menu-lateral {
+    width: 80px;
+    height: 100%;
+    background-color: #202020;
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 rgb(83, 243, 227);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+
+nav.menu-lateral.expandir {
+    width: 300px;
+}
+
+.btn-expandir {
+    width: 100%;
+    padding-left: 10px;
+}
+
+.btn-expandir > i {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul {
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu {
+    transition: .2;
+}
+
+ul li.ativo {
+    background-color: rgb(83, 243, 227);
+}
+
+ul li.item-menu:hover {
+    background: rgb(83, 243, 227);
+}
+
+ul li.item-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+ul li.item-menu a .txt-link {
+    margin-left: 70px;
+    transition: .5s;
+    opacity: 0;
+}
+
+nav.menu-lateral.expandir .txt-link {
+    margin-left: 40px;
+    opacity: 1;
+}
+
+ul li.item-menu a .icone > i {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+
+
+
+/* ESTILO DO FORMULÁRIO */
+
+section.formulario {
+    padding: 80px 4%;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+    
+}
+
+form input, form textarea{
+    width: 100%;
+    background-color: #504f4f;
+    border: 0;
+    outline: 0;
+    padding: 20px 15px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 18px;
+}
+
+form textarea {
+    resize:none;
+    max-height: 200px;
+}
+
+form .btn-enviar {
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+form .btn-enviar input {
+    width: 120px;
+    background-color: rgb(21, 151, 177);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+
+}
+
+button:hover, form .btn-enviar input:hover {
+    box-shadow: 0px 0px 8px rgb(12, 163, 194);
+}
+
+h2.titulo {
+    color: #080808;
+    font-size: 38px;    
+    text-align: center;
+}
+
+h2.titulo span {
+    color: rgb(12, 163, 194);
+}
+
+
