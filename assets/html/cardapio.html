@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="/assets/css/cardapio.css" />
+
+<title>Cardápio - SIH</title>
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header class="header-bg">
+    <div class="header-content">
+        <img src="/assets/images/menu.jpg" alt="" 
+        class="menu-image"/>
+
+        <h1 class="main-title">Cardápio SIH</h1>
+
+        <span class="sub-title">Faça o seu pedido!</span>
+
+        <div class="date-span" id="date-span">
+            <span class="sub-title">Seg a dom - 06:00 às 22:00</span>
+        </div>
+    </div>
+</header>
+
+<!-- FIM DO HEADER -->
+
+<h2 class="menu-title">Conheça o nosso menu!</h2>
+
+<!-- INICIO MENU -->
+
+<div id="menu">
+    <main class="menu-grid">
+        <div class="menu-item">
+            <img src="/assets/images/refeicao1.jpg" alt="" class="menu-item-image"/>
+
+            <div >
+                <p class="item-title">Frango da casa</p>
+                <p class="item-description">Um suculento frango ao molho madeira, acompanhado de arroz, feijão e salada.</p>
+                <div class="item-controls">
+                    <button class="add-to-cart-btn" data-name="Frango da casa">
+                        <i class="fa fa-cart-plus text-lg text-white"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="/assets/images/refeicao2.jpg" alt="" class="menu-item-image"/>
+
+            <div >
+                <p class="item-title">Salada da casa</p>
+                <p class="item-description">Um suculento frango grelhado, acompanhado de uma suculenta salada.</p>
+                <div class="item-controls">
+                    <button class="add-to-cart-btn" data-name="Salada da casa">
+                        <i class="fa fa-cart-plus text-lg text-white"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="/assets/images/refeicao3.jpg" alt="" class="menu-item-image"/>
+
+            <div >
+                <p class="item-title">Legumes da casa</p>
+                <p class="item-description">Um suculento frango grelhado, acompanhado de brócolis, cenoura, couve-flor e arroz.</p>
+                <div class="item-controls">
+                    <button class="add-to-cart-btn" data-name="Legumes da casa">
+                        <i class="fa fa-cart-plus text-lg text-white"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="/assets/images/refeicao4.jpg" alt="" class="menu-item-image"/>
+
+            <div >
+                <p class="item-title">Lanche rápido</p>
+                <p class="item-description">Pão crocante acompanhado de ovo, tomate e pimentão. Finalizado com hortaliças.</p>
+                <div class="item-controls">
+                    <button class="add-to-cart-btn" data-name="Lanche rapido">
+                        <i class="fa fa-cart-plus text-lg text-white"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="/assets/images/refeicao5.jpg" alt="" class="menu-item-image"/>
+
+            <div >
+                <p class="item-title">Bife da casa</p>
+                <p class="item-description">Um suculento bife acebolado, acompanhado de arroz, feijão, tomate, alface e rúcula.</p>
+                <div class="item-controls">
+                    <button class="add-to-cart-btn" data-name="Bife da casa">
+                        <i class="fa fa-cart-plus text-lg text-white"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="/assets/images/refeicao6.jpg" alt="" class="menu-item-image"/>
+
+            <div >
+                <p class="item-title">Ovos da casa</p>
+                <p class="item-description">Um suculento par de ovos fritos, acompanhados com queijo coalho, tomate cereja, abacate e alface.</p>
+                <div class="item-controls">
+                    <button class="add-to-cart-btn" data-name="Salada da casa">
+                        <i class="fa fa-cart-plus text-lg text-white"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="/assets/images/refeicao7.jpg" alt="" class="menu-item-image"/>
+
+            <div >
+                <p class="item-title">Salmão da casa</p>
+                <p class="item-description">Um suculento filé de salmão grelhado ao molho de mostarda, acompanhado de arroz e coentro.</p>
+                <div class="item-controls">
+                    <button class="add-to-cart-btn" data-name="Salmão da casa">
+                        <i class="fa fa-cart-plus text-lg text-white"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="/assets/images/refeicao8.jpg" alt="" class="menu-item-image"/>
+
+            <div >
+                <p class="item-title">Sanduíche da casa</p>
+                <p class="item-description">Um suculento sanduíche natural de queijo, presunto, rúcula e tomate.</p>
+                <div class="item-controls">
+                    <button class="add-to-cart-btn" data-name="Sanduiche da casa">
+                        <i class="fa fa-cart-plus text-lg text-white"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="section-title">
+        <h2 class="beverages-title">Bebidas</h2>
+    </div>
+
+    <!-- GRID BEBIDAS -->
+
+    <!-- Substituir o ID do grid de bebidas para evitar conflito -->
+<div class="beverages-grid" id="beverages-menu">
+    <div class="beverages-item">
+        <img src="/assets/images/refri.jpg" alt="" class="beverages-image"/>
+
+        <div class="beverages-description">
+            <p class="beverages-name">Refrigerante lata</p>
+            <p class="beverages-detail">Coca-cola, Coca-cola zero, Guaraná, Fanta uva e Fanta laranja.</p>
+            <div class="beverages-controls">
+                <button class="add-to-cart-btn" data-name="Refri">
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="beverages-item">
+        <img src="/assets/images/suco.jpg" alt="" class="beverages-image"/>
+
+        <div class="beverages-description">
+            <p class="beverages-name">Suco de Laranja</p>
+            <p class="beverages-detail">Delicioso suco natural da fruta.</p>
+            <div class="beverages-controls">
+                <button class="add-to-cart-btn" data-name="Suco">
+                    <i class="fa fa-cart-plus text-lg text-white"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- FIM GRID BEBIDAS -->
+</div>
+<!-- FIM MENU -->
+
+<!-- MODAL CART -->
+
+<div class="cart-modal" id="cart-modal">
+    <div class="cart-modal-content">
+        <h2 class="modal-title">Meu carrinho</h2>
+
+        <div id="cart-items" class="cart-items"></div>
+
+        <p class="cart-total-text">Total: <span id="cart-total">0.00</span></p>
+
+        <p class="modal-subtitle">Quarto de entrega</p>
+            <input type="text" placeholder="Digite o seu quarto de entrega" id="address" class="address-input"/>
+            
+            <p class="text-red-500 hidden" id="address-warn">Digite seu quarto de entrega!</p>
+
+            <div class="modal-actions">
+                <button id="close-modal-btn">Fechar</button>
+                <button id="checkout-btn" class="checkout-btn">Finalizar pedido</button>
+            </div>
+        </div>
+    </div>
+
+<!-- FIM MODAL CART -->
+
+<footer class="footer">
+    <button class="cart-btn" id="cart-btn">
+        (<span id="cart-counter">0</span>)
+        Veja meu carrinho
+        <i class="fa fa-cart-plus cart-icon"></i>
+    </button>
+</footer>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="/assets/js/cardapio.js"></script>
+
+</body>
+</html>
