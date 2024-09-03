@@ -1,61 +1,37 @@
-let btn = document.querySelector('.fa-eye')
+function entrar() {
+  // Captura os valores dos campos de entrada
+  const usuario = document.getElementById("usuario").value;
+  const senha = document.getElementById("senha").value;
 
-btn.addEventListener('click', ()=>{
-  let inputSenha = document.querySelector('#senha')
-  
-  if(inputSenha.getAttribute('type') == 'password'){
-    inputSenha.setAttribute('type', 'text')
-  } else {
-    inputSenha.setAttribute('type', 'password')
-  }
-})
+  // Cria o objeto de login que será enviado para o backend
+  const loginData = {
+      cpf: usuario,  // Supondo que 'usuario' seja equivalente a 'cpf' no seu backend
+      senha: senha
+  };
 
-function entrar(){
-  let usuario = document.querySelector('#usuario')
-  let userLabel = document.querySelector('#userLabel')
-  
-  let senha = document.querySelector('#senha')
-  let senhaLabel = document.querySelector('#senhaLabel')
-  
-  let msgError = document.querySelector('#msgError')
-  let listaUser = []
-  
-  let userValid = {
-    nome: null,
-    user: null,
-    senha: null
-  }
-  
-  listaUser = JSON.parse(localStorage.getItem('listaUser'))
-  
-  listaUser.forEach((item) => {
-    if(usuario.value == item.userCad && senha.value == item.senhaCad){
-       
-      userValid = {
-         nome: item.nomeCad,
-         user: item.userCad,
-         senha: item.senhaCad
-       }
-      
-    }
+  // Configura a requisição para enviar os dados para o backend
+  fetch('http://localhost:8080/usuario/login', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(loginData)
   })
-   
-  if(usuario.value == userValid.user && senha.value == userValid.senha){
-    window.location.href = '../../index.html'
-    
-    let mathRandom = Math.random().toString(16).substr(2)
-    let token = mathRandom + mathRandom
-    
-    localStorage.setItem('token', token)
-    localStorage.setItem('userLogado', JSON.stringify(userValid))
-  } else {
-    userLabel.setAttribute('style', 'color: red')
-    usuario.setAttribute('style', 'border-color: red')
-    senhaLabel.setAttribute('style', 'color: red')
-    senha.setAttribute('style', 'border-color: red')
-    msgError.setAttribute('style', 'display: block')
-    msgError.innerHTML = 'Usuário ou senha incorretos'
-    usuario.focus()
-  }
-  
+  .then(response => {
+      if (response.ok) {
+          return response.json(); // Se a resposta for positiva, converte o retorno para JSON
+      } else if (response.status === 401) {
+          throw new Error('Usuário ou senha incorretos.');
+      } else {
+          throw new Error('Erro desconhecido.');
+      }
+  })
+  .then(data => {
+      console.log('Usuário autenticado:', data);
+      // Redirecionar ou tomar alguma ação após o sucesso do login
+  })
+  .catch(error => {
+      console.error('Erro:', error);
+      document.getElementById("msgError").innerText = error.message;
+  });
 }
