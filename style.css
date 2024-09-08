@@ -149,6 +149,7 @@ section.especialidades .flex{
     margin-top: 45px;
     border-radius: 20px;
     transition: .2s;
+    text-align: center; 
 }
 
 .especialidades .especialidades-box:hover {
