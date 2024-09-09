@@ -28,7 +28,7 @@ function entrar() {
   })
   .then(data => {
       console.log('Usuário autenticado:', data);
-      // Redirecionar ou tomar alguma ação após o sucesso do login
+      //TODO: Redirecionar ou tomar alguma ação após o sucesso do login
   })
   .catch(error => {
       console.error('Erro:', error);
