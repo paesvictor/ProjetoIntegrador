@@ -102,6 +102,7 @@ main {
     margin-left: 0; /* Remove o espaço para a barra lateral */
     padding: 20px;
     background-color: #f4f6f9;
+    background-image: url(../images/signinTelaFundo.jpg);
 }
 
 .formulario {
