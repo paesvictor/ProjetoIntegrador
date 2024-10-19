@@ -9,7 +9,8 @@
 
 body {
     height: 100vh;
-    background-image: url(../images/telafundopaciente.jpg);
+    background-color: rgb(244, 248, 248);
+    /*background-image: url(../images/telafundopaciente.jpg);*/
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed
@@ -18,9 +19,9 @@ body {
 nav.menu-lateral {
     width: 80px;
     height: 100%;
-    background-color: #202020;
+    background-color: rgba(4, 130, 247, 0.459);
     padding: 40px 0 40px 1%;
-    box-shadow: 3px 0 0 rgb(83, 243, 227);
+    box-shadow: 3px 0 0 rgb(207, 240, 236);
     position: fixed;
     top: 0;
     left: 0;
@@ -106,40 +107,50 @@ form {
     
 }
 
-form input, form textarea{
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea {
     width: 100%;
-    background-color: #504f4f;
-    border: 0;
-    outline: 0;
-    padding: 20px 15px;
-    border-radius: 15px;
-    color: #fff;
-    font-size: 18px;
+    padding: 12px;
+    margin: 8px 0 20px 0;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #2c3e50;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-form textarea {
-    resize:none;
-    max-height: 200px;
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
 }
 
-form .btn-enviar {
-    margin-top: 20px;
-    text-align: center;
-
-}
-
-form .btn-enviar input {
-    width: 120px;
-    background-color: rgb(21, 151, 177);
-    color: #fff;
-    font-weight: 700;
+button {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: .2s;
-
+    font-size: 18px;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
 }
 
-button:hover, form .btn-enviar input:hover {
-    box-shadow: 0px 0px 8px rgb(12, 163, 194);
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #1f6396;
 }
 
 h2.titulo {
