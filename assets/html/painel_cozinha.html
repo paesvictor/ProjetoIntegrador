@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos da Cozinha</title>
+    <link rel="stylesheet" href="../css/estilo_painel.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pedidos</h1>
+
+        <div class="pedido">
+            <p>Pedido nº: <span class="numero">001</span></p>
+            <p>Status: 
+                <span class="status preparacao">Preparando</span>
+                <select onchange="alterarStatus(this)">
+                    <option value="Preparando">Preparando</option>
+                    <option value="Em andamento">Em andamento</option>
+                    <option value="Pronto">Pronto</option>
+                    <option value="Entregue">Entregue</option>
+                </select>
+            </p>
+        </div>
+
+        <div class="pedido">
+            <p>Pedido nº: <span class="numero">002</span></p>
+            <p>Status: 
+                <span class="status preparacao">Preparando</span>
+                <select onchange="alterarStatus(this)">
+                    <option value="Preparando">Preparando</option>
+                    <option value="Em andamento">Em andamento</option>
+                    <option value="Pronto">Pronto</option>
+                    <option value="Entregue">Entregue</option>
+                </select>
+            </p>
+        </div>
+
+        <div class="pedido">
+            <p>Pedido nº: <span class="numero">003</span></p>
+            <p>Status: 
+                <span class="status preparacao">Preparando</span>
+                <select onchange="alterarStatus(this)">
+                    <option value="Preparando">Preparando</option>
+                    <option value="Em andamento">Em andamento</option>
+                    <option value="Pronto">Pronto</option>
+                    <option value="Entregue">Entregue</option>
+                </select>
+            </p>
+        </div>
+    </div>
+
+    <script src="../js/script_Painel.js"></script>
+</body>
+</html>
