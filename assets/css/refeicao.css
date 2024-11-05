@@ -9,8 +9,8 @@
 
 body {
     height: 100vh;
-    background-color: rgb(244, 248, 248);
-    /*background-image: url(../images/telafundopaciente.jpg);*/
+    background-color: rgb(244, 248, 248);;
+    /*background-image: url(../images/telafundomedico.jpg);*/
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed
@@ -21,7 +21,7 @@ nav.menu-lateral {
     height: 100%;
     background-color: rgba(4, 130, 247, 0.459);
     padding: 40px 0 40px 1%;
-    box-shadow: 3px 0 0 rgb(207, 240, 236);
+    box-shadow: 3px 0 0 rgb(83, 243, 227);
     position: fixed;
     top: 0;
     left: 0;
@@ -131,6 +131,36 @@ textarea:focus {
     box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
 }
 
+form .btn-enviar {
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+form .btn-enviar input {
+    width: 120px;
+    background-color: rgb(21, 151, 177);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+
+}
+
+button:hover, form .btn-enviar input:hover {
+    box-shadow: 0px 0px 8px rgb(12, 163, 194);
+}
+
+h2.titulo {
+    color: #080808;
+    font-size: 38px;    
+    text-align: center;
+}
+
+h2.titulo span {
+    color: rgb(12, 163, 194);
+}
+
 button {
     background-color: #3498db;
     color: #ffffff;
@@ -153,12 +183,4 @@ button:active {
     background-color: #1f6396;
 }
 
-h2.titulo {
-    color: #080808;
-    font-size: 38px;    
-    text-align: center;
-}
 
-h2.titulo span {
-    color: rgb(12, 163, 194);
-}

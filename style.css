@@ -62,7 +62,7 @@ header a{
 
 }
 
-header a:hover {
+header nav.menu-desktop a:hover {
     color: #fff;
     transform: scale(1.05);
 }
@@ -71,7 +71,7 @@ header nav ul {
     list-style-type: none;
 }
 
-header nav li {
+header nav.menu-desktop li {
     display: inline-block;
     padding: 0 40px;
 }
@@ -81,6 +81,71 @@ header nav li {
     box-shadow: 0px 0px 8px rgb(21, 151, 177);
     transform: scale(1.05);
    
+}
+
+/* ESTILO DO MENU MOBILE */
+
+.overlay-menu {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+}
+
+.btn-abrir-menu i {
+    color: white;
+    font-size: 40px;
+}
+
+.menu-mobile {
+    background-color: rgba(4, 130, 247, 0.459);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 0%;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.menu-mobile.abrir-menu {
+    width: 70%;
+
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu {
+    display: block;
+}
+
+.menu-mobile .btn-fechar {
+    padding: 20px 5%;
+}
+
+.menu-mobile .btn-fechar i{
+    color: white;
+    font-size: 30px;
+}
+
+.menu-mobile nav ul {
+    text-align: right;
+}
+
+.menu-mobile nav ul li a {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+}
+
+.menu-mobile nav ul li a:hover {
+    background-color: aqua;
+    color: black;
 }
 
 /* ESTILO DO TOPO DO SITE */
@@ -149,6 +214,7 @@ section.especialidades .flex{
     margin-top: 45px;
     border-radius: 20px;
     transition: .2s;
+    text-align: center; 
 }
 
 .especialidades .especialidades-box:hover {
@@ -164,4 +230,54 @@ section.especialidades .flex{
 .especialidades .especialidades-box h3 {
     font-size: 28px;
     margin: 15px 0;
+}
+
+/* DEIXANDO RESPONSIVO */
+
+@media screen and (max-width: 1020px) {
+    
+    /* classes gerais */
+    .flex {
+        flex-direction: column-reverse;
+    }
+
+    h2.titulo {
+        font-size: 34px;  
+        line-height: 30px;  
+    }
+
+
+    /* cabeçalho */
+    .menu-desktop, .btn-contato {
+        display: none;
+    }
+
+    /* topo do site */
+    section.topo-do-site .flex {
+        gap: 40px;
+    }
+
+    section.topo-do-site{
+        padding: 20px 8%;
+    }
+    .topo-do-site h1 {
+        font-size: 30px;
+    }
+
+    .topo-do-site .img-topo-site img {
+        width: 100%;
+
+    }
+
+    /* ESTILO DOS DIFERENCIAIS  */
+
+    section.especialidades{
+        padding: 40px 8%;
+    }
+
+    img-topo-site img {
+        width: 100%;
+    }
+
+
 }
