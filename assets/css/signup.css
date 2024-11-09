@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url("../images/signupTelaFundo.jpg");
+  background-image: url("../images/imagemTeste1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed
@@ -22,7 +22,7 @@ body {
 }
 
 .card {
-  background-color: #ffffffc7;
+  background-color: #e4dede94;;
   padding: 30px;
   border-radius: 4%;
   box-shadow: 3px 3px 1px 0px #00000060;
@@ -32,7 +32,7 @@ body {
 h1{
   text-align: center;
   margin-bottom: 20px;
-  color: #0d009c
+  color: #272262
 }
 
 .label-float input{
@@ -62,7 +62,7 @@ h1{
 }
 
 .label-float label{
-  color: #0d009c;
+  color:  #272262;
   pointer-event: none;
   position: absolute;
   top: 0;
@@ -80,8 +80,8 @@ h1{
 
 button{
   background-color: transparent;
-  border-color: #0d009c;
-  color: #0d009c;
+  border-color: #272262;
+  color: #272262;
   padding: 7px;
   font-weight: bold;
   font-size: 12pt;

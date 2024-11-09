@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Solicitação de Avaliação Nutricional</title>
+    <title>Página do Médico</title>
     <link rel="stylesheet" href="../css/medico.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -22,7 +22,7 @@
 
     <main>
         <section class="formulario">
-            <h2 class="titulo">Formulário de Solicitação de Avaliação Nutricional</h2>
+            <h2 class="titulo">Formulário Para Liberação de Dieta</h2>
             <form>
                 <label for="medico">Médico Responsável:</label>
                 <input type="text" id="medico" name="medico" required>
@@ -42,74 +42,23 @@
                 <label for="andar">Andar:</label>
                 <input type="text" id="andar" name="andar" required>
 
-                <h3>Diagnóstico Médico Primário (Marque todas as opções relevantes)</h3>
+                <h3>Via de Administração da Dieta</h3>
                 <div>
-                    <label><input type="checkbox" name="diagnostico" value="Diabetes Mellitus"> Diabetes Mellitus</label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Hipertensão Arterial"> Hipertensão Arterial</label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Insuficiência Renal Crônica"> Insuficiência Renal Crônica</label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Doença Cardiovascular"> Doença Cardiovascular</label><br>
-                    <label><input type="checkbox" name="diagnostico" value="DPOC"> Doença Pulmonar Obstrutiva Crônica (DPOC)</label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Doenças Gastrointestinais"> Doenças Gastrointestinais (Especificar): <input type="text" name="doencas-gastrointestinais"></label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Obesidade"> Obesidade</label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Desnutrição"> Desnutrição</label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Câncer"> Câncer (Especificar tipo): <input type="text" name="tipo-cancer"></label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Outra(s)"> Outra(s) condição(ões): <input type="text" name="outra-condicao"></label>
+                    <label><input type="checkbox" name="diagnostico" value="Diabetes Mellitus"> Via Oral</label><br>
+                    <label><input type="checkbox" name="diagnostico" value="Hipertensão Arterial"> Via Enteral</label><br>
+                    <label><input type="checkbox" name="diagnostico" value="Insuficiência Renal Crônica"> Via Parenteral</label><br>
+                    <label><input type="checkbox" name="objetivos" value="Dieta restritiva"> Observações: <input type="text" name="dieta-restritiva"></label><br>
                 </div>
 
-                <h3>Objetivos Nutricionais (Marque todas as opções relevantes)</h3>
+                <h3>Consistência da Dieta</h3>
                 <div>
-                    <label><input type="checkbox" name="objetivos" value="Controle de glicemia"> Controle de glicemia</label><br>
-                    <label><input type="checkbox" name="objetivos" value="Redução de peso"> Redução de peso</label><br>
-                    <label><input type="checkbox" name="objetivos" value="Ganho de peso"> Ganho de peso</label><br>
-                    <label><input type="checkbox" name="objetivos" value="Aumento da massa muscular"> Aumento da massa muscular</label><br>
-                    <label><input type="checkbox" name="objetivos" value="Suporte nutricional enteral/parenteral"> Suporte nutricional enteral/parenteral</label><br>
-                    <label><input type="checkbox" name="objetivos" value="Reabilitação nutricional pós-cirúrgica"> Reabilitação nutricional pós-cirúrgica</label><br>
-                    <label><input type="checkbox" name="objetivos" value="Controle de níveis lipídicos"> Controle de níveis lipídicos</label><br>
-                    <label><input type="checkbox" name="objetivos" value="Dieta restritiva"> Dieta restritiva (Especificar tipo): <input type="text" name="dieta-restritiva"></label><br>
-                    <label><input type="checkbox" name="objetivos" value="Alergia ou intolerância alimentar"> Alergia ou intolerância alimentar (Especificar): <input type="text" name="alergia-intolerancia"></label><br>
-                    <label><input type="checkbox" name="objetivos" value="Suporte imunológico"> Suporte imunológico</label><br>
-                    <label><input type="checkbox" name="objetivos" value="Outro(s)"> Outro(s): <input type="text" name="outro-objetivo"></label>
+                    <label><input type="checkbox" name="objetivos" value="Controle de glicemia"> Sólido</label><br>
+                    <label><input type="checkbox" name="objetivos" value="Redução de peso"> Líquido</label><br>
+                    <label><input type="checkbox" name="objetivos" value="Dieta restritiva"> Observações: <input type="text" name="dieta-restritiva"></label><br>
                 </div>
 
-                <h3>Restrição Alimentar (Marque todas as opções relevantes)</h3>
-                <div>
-                    <label><input type="checkbox" name="restricao" value="Sem restrições"> Sem restrições</label><br>
-                    <label><input type="checkbox" name="restricao" value="Restrição de sódio"> Restrição de sódio</label><br>
-                    <label><input type="checkbox" name="restricao" value="Restrição de gorduras saturadas"> Restrição de gorduras saturadas</label><br>
-                    <label><input type="checkbox" name="restricao" value="Restrição de carboidratos"> Restrição de carboidratos</label><br>
-                    <label><input type="checkbox" name="restricao" value="Dieta sem glúten"> Dieta sem glúten</label><br>
-                    <label><input type="checkbox" name="restricao" value="Dieta sem lactose"> Dieta sem lactose</label><br>
-                    <label><input type="checkbox" name="restricao" value="Dieta hipocalórica"> Dieta hipocalórica</label><br>
-                    <label><input type="checkbox" name="restricao" value="Dieta hiperproteica"> Dieta hiperproteica</label><br>
-                    <label><input type="checkbox" name="restricao" value="Outra(s)"> Outra(s): <input type="text" name="outra-restricao"></label>
-                </div>
-
-                <h3>Suplementação Nutricional (Marque as opções que aplicam)</h3>
-                <div>
-                    <label><input type="checkbox" name="suplementacao" value="Suplemento vitamínico"> Suplemento vitamínico</label><br>
-                    <label><input type="checkbox" name="suplementacao" value="Suplemento mineral"> Suplemento mineral</label><br>
-                    <label><input type="checkbox" name="suplementacao" value="Fórmulas nutricionais específicas"> Fórmulas nutricionais específicas (Especificar): <input type="text" name="formulas-nutricionais"></label><br>
-                    <label><input type="checkbox" name="suplementacao" value="Alimentação enteral/parenteral"> Alimentação enteral/parenteral (Especificar fórmula): <input type="text" name="alimentacao-enteral"></label><br>
-                    <label><input type="checkbox" name="suplementacao" value="Outro(s)"> Outro(s): <input type="text" name="outro-suplemento"></label>
-                </div>
-
-                <h3>Sintomas Relacionados à Alimentação (Marque todas as opções relevantes)</h3>
-                <div>
-                    <label><input type="checkbox" name="sintomas" value="Náuseas"> Náuseas</label><br>
-                    <label><input type="checkbox" name="sintomas" value="Vômitos"> Vômitos</label><br>
-                    <label><input type="checkbox" name="sintomas" value="Diarreia"> Diarreia</label><br>
-                    <label><input type="checkbox" name="sintomas" value="Constipação"> Constipação</label><br>
-                    <label><input type="checkbox" name="sintomas" value="Disfagia"> Disfagia</label><br>
-                    <label><input type="checkbox" name="sintomas" value="Perda de apetite"> Perda de apetite</label><br>
-                    <label><input type="checkbox" name="sintomas" value="Fadiga crônica"> Fadiga crônica</label><br>
-                    <label><input type="checkbox" name="sintomas" value="Outros"> Outros: <input type="text" name="outros-sintomas"></label>
-                </div>
-
-                <label for="consideracoes">Considerações Adicionais do Médico:</label>
+                <h3>Considerações Adicionais</h3>
                 <textarea id="consideracoes" name="consideracoes"></textarea>
-
-                <label for="assinatura">Assinatura do Médico:</label>
-                <input type="text" id="assinatura" name="assinatura" placeholder="Digite sua assinatura aqui" required>
 
                 <button type="submit">Enviar</button>
             </form>

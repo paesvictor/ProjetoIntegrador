@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url(../images/signinTelaFundo.jpg);
+  background-image: url(../images/imagemTeste1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed
@@ -22,15 +22,15 @@ body {
 }
 
 .card {
-  background-color: #ffffffc7;
-  padding: 30px;
+  background-color: #e4dede94;
+  padding: 50px;
   border-radius: 4%;
   box-shadow: 3px 3px 1px 0px #00000060
 }
 
 h1{
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   color: #272262
 }
 

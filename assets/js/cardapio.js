@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="font-medium">${item.name}</p>
-                        <p>Qtd: ${item.quantity}</p>
+                        <p>Quantidade: ${item.quantity}</p>
                     </div>
                     <button class="remove-cart-btn" data-name="${item.name}">
                         Remover
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let inputValue = event.target.value;
 
         if (inputValue !== "") {
-            addressInput.classList.remove("border-red-500");
+            addressInput.classList.remove("address-warn");
             addressWarn.classList.add("hidden");
         }
     });
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function checkRestaurantOpen() {
         const data = new Date();
         const hora = data.getHours();
-        return hora >= 6 && hora < 14;
+        return hora >= 6 && hora < 22;
     }
     
     const spanItem = document.getElementById("date-span");
