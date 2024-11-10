@@ -30,20 +30,6 @@
                 <label for="paciente">Nome do Paciente:</label>
                 <input type="text" id="paciente" name="paciente" required>
 
-                <h3>DIAGNÓSTICO MÉDICO PRIMÁRIO (Marque todas as opções relevantes)</h3>
-                <div>
-                    <label><input type="checkbox" name="diagnostico" value="Diabetes Mellitus"> Diabetes Mellitus</label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Hipertensão Arterial"> Hipertensão Arterial</label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Insuficiência Renal Crônica"> Insuficiência Renal Crônica</label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Doença Cardiovascular"> Doença Cardiovascular</label><br>
-                    <label><input type="checkbox" name="diagnostico" value="DPOC"> Doença Pulmonar Obstrutiva Crônica (DPOC)</label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Doenças Gastrointestinais"> Doenças Gastrointestinais (Especificar): <input type="text" name="doencas-gastrointestinais"></label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Obesidade"> Obesidade</label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Desnutrição"> Desnutrição</label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Câncer"> Câncer (Especificar tipo): <input type="text" name="tipo-cancer"></label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Outra(s)"> Outra(s) condição(ões): <input type="text" name="outra-condicao"></label>
-                </div>
-
                 <h3>TIPO DE DIETA </h3>
                 <div>
                     <label><input type="checkbox" name="objetivos" value="Sem Restrição"> Sem Restrição</label><br>
@@ -56,6 +42,9 @@
                     <label><input type="checkbox" name="sintomas" value="Oral"> Oral</label><br>
                     <label><input type="checkbox" name="sintomas" value="Sonda Nasogástrica"> Sonda Nasogástrica</label><br>
                 </div>
+
+                <h3>OBSERVAÇÃO</h3>
+                <textarea id="observacao" name="observacao" rows="4" cols="50"></textarea>
 
                 <button type="submit">Enviar</button>
             </form>
