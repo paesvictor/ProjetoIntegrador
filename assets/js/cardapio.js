@@ -1,181 +1,142 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const menu = document.getElementById("menu");
-    const beveragesMenu = document.getElementById("beverages-menu");
-    const cartBtn = document.getElementById("cart-btn");
-    const cartModal = document.getElementById("cart-modal");
-    const cartItemsContainer = document.getElementById("cart-items");
-    const cartTotal = document.getElementById("cart-total");
-    const checkoutBtn = document.getElementById("checkout-btn");
-    const closeModalBtn = document.getElementById("close-modal-btn");
-    const cartCounter = document.getElementById("cart-counter");
-    const addressInput = document.getElementById("address");
-    const addressWarn = document.getElementById("address-warn");
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('http://localhost:8080/refeicao/')
+        .then(response => response.json())
+        .then(data => {
+            const menuGrid = document.getElementById('menu-grid');
+            data.data.forEach((refeicao, index) => {
+                const menuItem = document.createElement('div');
+                menuItem.classList.add('menu-item');
 
-    let cart = [];
-
-    // ABRIR O MODAL DO CARRINHO
-    cartBtn.addEventListener("click", function() {
-        cartModal.style.display = "flex";
-        updateCartModal();
-    });
-
-    // FECHAR O MODAL QUANDO CLICAR FORA
-    cartModal.addEventListener("click", function(event) {
-        if (event.target === cartModal) {
-            cartModal.style.display = "none";
-        }
-    });
-
-    // FECHAR O MODAL CLICANDO EM "FECHAR"
-    closeModalBtn.addEventListener("click", function() {
-        cartModal.style.display = "none";
-    });
-
-    // ADICIONAR ITEM AO CARRINHO
-    menu.addEventListener("click", function(event) {
-        let parentButton = event.target.closest(".add-to-cart-btn");
-
-        if (parentButton) {
-            const name = parentButton.getAttribute("data-name");
-            addToCart(name);
-        }
-    });
-
-    beveragesMenu.addEventListener("click", function(event) {
-        let parentButton = event.target.closest(".add-to-cart-btn");
-
-        if (parentButton) {
-            const name = parentButton.getAttribute("data-name");
-            addToCart(name);
-        }
-    });
-
-    function addToCart(name) {
-        const existingItem = cart.find(item => item.name === name);
-
-        if (existingItem) {
-            existingItem.quantity += 1;
-        } else {
-            cart.push({
-                name,
-                quantity: 1,
-            });
-        }
-
-        updateCartModal();
-    }
-
-    function updateCartModal() {
-        cartItemsContainer.innerHTML = "";
-        let total = 0;
-
-        cart.forEach(item => {
-            const cartItemElement = document.createElement("div");
-            cartItemElement.classList.add("flex", "justify-between", "mb-4", "flex-col");
-
-            cartItemElement.innerHTML = `
-                <div class="flex items-center justify-between">
+                // Adicionando conteúdo ao menuItem
+                menuItem.innerHTML = `
+                    <img src="../images/refeicao${index + 1}.jpg" alt="" class="menu-item-image"/>
                     <div>
-                        <p class="font-medium">${item.name}</p>
-                        <p>Quantidade: ${item.quantity}</p>
+                        <p class="item-title">${refeicao.nome}</p>
+                        <p class="item-description">${refeicao.descricao}</p>
+                        <div class="item-controls">
+                            <button class="add-to-cart-btn" data-id="${refeicao.idRefeicao}" data-name="${refeicao.nome}" data-descricao="${refeicao.descricao}">
+                                <i class="fa fa-cart-plus text-lg text-white"></i>
+                            </button>
+                        </div>
                     </div>
-                    <button class="remove-cart-btn" data-name="${item.name}">
-                        Remover
-                    </button>
-                </div>
-            `;
+                `;
 
-            cartItemsContainer.appendChild(cartItemElement);
-        });
+                // Adicionando o menuItem ao menuGrid
+                menuGrid.appendChild(menuItem);
+            });
 
-        cartCounter.innerHTML = cart.length;
-    }
+            // Adiciona evento aos botões de adicionar ao carrinho
+            document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+                button.addEventListener('click', addToCart);
+            });
+        })
+        .catch(error => console.error('Erro ao buscar dados da API:', error));
+});
 
-    cartItemsContainer.addEventListener("click", function(event) {
-        if (event.target.classList.contains("remove-cart-btn")) {
-            const name = event.target.getAttribute("data-name");
-            removeItemCart(name);
-        }
-    });
+let cart = [];
 
-    function removeItemCart(name) {
-        const index = cart.findIndex(item => item.name === name);
+function addToCart(event) {
+    const button = event.target.closest('button');
+    const id = button.getAttribute('data-id');
+    const name = button.getAttribute('data-name');
+    const descricao = button.getAttribute('data-descricao');
 
-        if (index !== -1) {
-            const item = cart[index];
-
-            if (item.quantity > 1) {
-                item.quantity -= 1;
-                updateCartModal();
-                return;
-            }
-
-            cart.splice(index, 1);
-            updateCartModal();
-        }
-    }
-
-    addressInput.addEventListener("input", function(event) {
-        let inputValue = event.target.value;
-
-        if (inputValue !== "") {
-            addressInput.classList.remove("address-warn");
-            addressWarn.classList.add("hidden");
-        }
-    });
-
-    checkoutBtn.addEventListener("click", function() {
-        const isOpen = checkRestaurantOpen();
-        if (!isOpen) {
-            Toastify({
-                text: "Ops! A cozinha está fechada no momento :(",
-                duration: 3000,
-                close: true,
-                gravity: "top",
-                position: "left",
-                stopOnFocus: true,
-                style: {
-                    background: "#ef4444",
-                },
-            }).showToast();
-
-            return;
-        }
-
-        if (cart.length === 0) return;
-        if (addressInput.value === "") {
-            addressWarn.classList.remove("hidden");
-            addressInput.classList.add("border-red-500");
-            return;
-        }
-
-        const cartItems = cart.map((item) => {
-            return (` ${item.name} Quantidade: (${item.quantity}) |`);
-        }).join("");
-
-        const message = encodeURIComponent(cartItems);
-        const phone = "61992757981";
-
-        window.open(`https://wa.me/${phone}?text=${message} Quarto: ${addressInput.value}`, "_blank");
-
-        cart = [];
-        updateCartModal();
-    });
-
-    function checkRestaurantOpen() {
-        const data = new Date();
-        const hora = data.getHours();
-        return hora >= 6 && hora < 22;
-    }
-    
-    const spanItem = document.getElementById("date-span");
-    const isOpen = checkRestaurantOpen();
-    
-    if (isOpen) {
-        spanItem.classList.remove("closed-bg");
-        spanItem.classList.add("open-bg");
+    const existingItem = cart.find(item => item.id === id);
+    if (existingItem) {
+        existingItem.quantity += 1;
     } else {
-        spanItem.classList.remove("open-bg");
-        spanItem.classList.add("closed-bg");
+        cart.push({ id, name, descricao, quantity: 1 });
     }
+
+    updateCartCounter();
+    showToast(`${name} adicionado ao carrinho`);
+}
+
+function updateCartCounter() {
+    const cartCounter = document.getElementById('cart-counter');
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCounter.textContent = totalItems;
+}
+
+function showToast(message) {
+    Toastify({
+        text: message,
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "#4CAF50",
+    }).showToast();
+}
+
+document.getElementById('cart-btn').addEventListener('click', function() {
+    const cartModal = document.getElementById('cart-modal');
+    const cartItemsContainer = document.getElementById('cart-items');
+    cartItemsContainer.innerHTML = '';
+
+    cart.forEach(item => {
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+            <p>${item.name} - ${item.descricao} (x${item.quantity})</p>
+        `;
+        cartItemsContainer.appendChild(cartItem);
+    });
+
+    cartModal.style.display = 'block';
+});
+
+document.getElementById('close-modal-btn').addEventListener('click', function() {
+    const cartModal = document.getElementById('cart-modal');
+    cartModal.style.display = 'none';
+});
+
+document.getElementById('checkout-btn').addEventListener('click', function() {
+    const addressInput = document.getElementById('address');
+    const addressWarn = document.getElementById('address-warn');
+
+    if (addressInput.value.trim() === '') {
+        addressWarn.style.display = 'block';
+        return;
+    }
+
+    addressWarn.style.display = 'none';
+
+    const pedidoRequest = {
+        idPedido: 0,
+        statusPedido: "Em preparo",
+        numeroQuarto: addressInput.value,
+        pedidoRefeicoes: cart.map(item => ({
+            refeicao: {
+                idRefeicao: item.id,
+                nome: item.name,
+                descricao: item.descricao,
+                disponibilidade: "Ativo"
+            },
+            quantidadeRefeicao: item.quantity
+        }))
+    };
+
+    fetch('http://localhost:8080/pedido', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(pedidoRequest)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Pedido realizado com sucesso!');
+            cart = [];
+            updateCartCounter();
+            const cartModal = document.getElementById('cart-modal');
+            cartModal.style.display = 'none';
+        } else {
+            alert('Erro ao realizar o pedido.');
+        }
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+        alert('Erro ao realizar o pedido.');
+    });
 });

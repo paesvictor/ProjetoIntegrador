@@ -23,42 +23,13 @@
     <main>
         <section class="formulario">
             <h2 class="titulo">Formulário Para Liberação de Dieta</h2>
-            <form>
+            <form id="formularioDieta">
                 <label for="medico">Médico Responsável:</label>
                 <input type="text" id="medico" name="medico" required>
 
                 <label for="paciente">Nome do Paciente:</label>
                 <input type="text" id="paciente" name="paciente" required>
 
-                <label for="data">Data:</label>
-                <input type="date" id="data" name="data" required>
-
-                <label for="idade">Idade:</label>
-                <input type="number" id="idade" name="idade" required>
-
-                <label for="quarto">Número do Quarto:</label>
-                <input type="text" id="quarto" name="quarto" required>
-
-                <label for="andar">Andar:</label>
-                <input type="text" id="andar" name="andar" required>
-
-                <h3>Via de Administração da Dieta</h3>
-                <div>
-                    <label><input type="checkbox" name="diagnostico" value="Diabetes Mellitus"> Via Oral</label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Hipertensão Arterial"> Via Enteral</label><br>
-                    <label><input type="checkbox" name="diagnostico" value="Insuficiência Renal Crônica"> Via Parenteral</label><br>
-                    <label><input type="checkbox" name="objetivos" value="Dieta restritiva"> Observações: <input type="text" name="dieta-restritiva"></label><br>
-                </div>
-
-                <h3>Consistência da Dieta</h3>
-                <div>
-                    <label><input type="checkbox" name="objetivos" value="Controle de glicemia"> Sólido</label><br>
-                    <label><input type="checkbox" name="objetivos" value="Redução de peso"> Líquido</label><br>
-                    <label><input type="checkbox" name="objetivos" value="Dieta restritiva"> Observações: <input type="text" name="dieta-restritiva"></label><br>
-                </div>
-
-                <h3>Considerações Adicionais</h3>
-                <textarea id="consideracoes" name="consideracoes"></textarea>
                 <h3>TIPO DE DIETA </h3>
                 <div>
                     <label><input type="checkbox" name="objetivos" value="Sem Restrição"> Sem Restrição</label><br>
